@@ -17,9 +17,7 @@ const Routes = () => (
             component={ Product }
         />
         <Route
-            component={ () => (
-                <div>Page not found</div>
-            )}
+            component={ Search }
         />
     </Switch>
 );

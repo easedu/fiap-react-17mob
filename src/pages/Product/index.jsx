@@ -40,21 +40,23 @@ class Product extends Component {
             <Fragment>
                 <Helmet bodyAttributes={{ style: 'background-color : #ebebeb' }} />
                 <div className="demo-card-wide mdl-card mdl-shadow--2dp">
-                    <div className="mdl-grid">
-                        <div className="mdl-cell mdl-cell--6-col">
-                            <div>{picture}</div>
-                        </div>
-                        <div className="mdl-cell mdl-cell--6-col">
-                            <div>#{data.id}</div>
-                            <div className="short-description item-conditions">{data.sold_quantity} vendidos</div>
-                            <div className="item-title__primary">{data.title}</div>
-                            <div className="price-tag-fraction">R${data.price}</div>
-                            <div className="dropdown-quantity-available">({data.initial_quantity} disponíveis)</div>
-                            <div>{data.warranty}</div>
-                            <br/>
-                            <div>{address}</div>
+
+                    <div className="mdl-cell mdl-cell--6-col">
+                        <div className="image">
+                            {picture}
                         </div>
                     </div>
+                    <div className="mdl-cell mdl-cell--6-col">
+                        <div>#{data.id}</div>
+                        <div className="short-description item-conditions">{data.sold_quantity} vendidos</div>
+                        <div className="item-title__primary">{data.title}</div>
+                        <div className="price-tag-fraction">R${data.price}</div>
+                        <div className="dropdown-quantity-available">({data.initial_quantity} disponíveis)</div>
+                        <div>{data.warranty}</div>
+                        <br />
+                        <div>{address}</div>
+                    </div>
+
                 </div>
             </Fragment>
         );
