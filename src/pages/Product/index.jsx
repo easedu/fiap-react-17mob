@@ -18,21 +18,23 @@ class Product extends Component {
             .then(({ data }) => {
                 this.setState({ data })
             })
-
-        // http://localhost:3000/product/MLB1165400089
-
-        // axios.get(`https://api.mercadolibre.com/items/${this.state.id}/description`)
-        //     .then(({ description }) => {
-        //         this.setState({ description })
-        //     })
     }
 
     render() {
         const { data } = this.state;
         console.log(this.state.data);
         let picture;
+        let address;
         if (data.pictures) {
             picture = <img src={data.pictures[0].url} />;
+        }
+        if (data.seller_address) {
+            address = <div>
+                <div className="short-description item-conditions item-title__secundary">Informação da loja</div>
+                <div className="short-description item-conditions">Cidade: {data.seller_address.city.name}</div>
+                <div className="short-description item-conditions">Estado: {data.seller_address.state.name}</div>
+                <div className="short-description item-conditions">País: {data.seller_address.country.name}</div>
+            </div>;
         }
         return (
             <Fragment>
@@ -44,11 +46,13 @@ class Product extends Component {
                         </div>
                         <div className="mdl-cell mdl-cell--6-col">
                             <div>#{data.id}</div>
-                            <div className="short-description .item-conditions">{data.sold_quantity} vendidos</div>
+                            <div className="short-description item-conditions">{data.sold_quantity} vendidos</div>
                             <div className="item-title__primary">{data.title}</div>
-                            <div className="price-tag-fraction">R${data.price},00</div>
+                            <div className="price-tag-fraction">R${data.price}</div>
                             <div className="dropdown-quantity-available">({data.initial_quantity} disponíveis)</div>
                             <div>{data.warranty}</div>
+                            <br/>
+                            <div>{address}</div>
                         </div>
                     </div>
                 </div>
