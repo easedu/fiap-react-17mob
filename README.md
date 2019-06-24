@@ -8,9 +8,6 @@ Esse comando vai fazer o clone do repositório para sua máquina
 ### `cd fiap-react-17mob`
 Esse comando vai entrar na pasta do projeto
 
-### `npm install`
-Esse comando vai instalar todas as dependências que o projeto precisa para rodar
-
 No diretório do seu projeto rodar os comandos a seguir:
 
 ### `npm install`
